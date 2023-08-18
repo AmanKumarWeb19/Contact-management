@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addContact } from '../redux/actions/contactActions';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addContact } from "../redux/actions/contactActions";
 
 const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [isActive, setIsActive] = useState(true); // Initialize status as active
 
   const dispatch = useDispatch();
@@ -13,8 +13,8 @@ const ContactForm = () => {
     e.preventDefault();
     const newContact = { id: Date.now(), name, email, isActive }; // Include isActive
     dispatch(addContact(newContact));
-    setName('');
-    setEmail('');
+    setName("");
+    setEmail("");
     setIsActive(true); // Reset status to active
   };
 
@@ -77,7 +77,7 @@ const ContactForm = () => {
           type="submit"
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
         >
-          Add Contact
+          Save Contact
         </button>
       </form>
     </div>
@@ -85,4 +85,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
