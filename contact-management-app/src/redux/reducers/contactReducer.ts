@@ -8,8 +8,8 @@ import {
 // Define the Contact type
 type Contact = {
   id: number;
-  first_name: string;
-  last_name: string;
+  name: string;
+  email: string;
   // Other properties of a contact
 };
 

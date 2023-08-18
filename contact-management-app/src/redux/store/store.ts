@@ -1,8 +1,14 @@
-
 // src/redux/store/store.ts
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk'; // If you're using thunk middleware
-import contactReducer from '../reducers/contactReducer';
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import contactReducer from "../reducers/contactReducer";
+import { Contact } from "../../types/types";
+
+// Define the RootState type
+type RootState = {
+  contacts: Contact[]; // Assuming Contact is a type you've defined
+  // Other properties of your state
+};
 
 // Combine reducers
 const rootReducer = combineReducers({
@@ -11,7 +17,7 @@ const rootReducer = combineReducers({
 });
 
 // Apply middleware
-const middleware = [thunk]; // Add other middlewares here if needed
+const middleware = [thunk];
 
 // Create the Redux store
 const store = createStore(rootReducer, applyMiddleware(...middleware));
