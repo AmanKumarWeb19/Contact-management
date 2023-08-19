@@ -5,3 +5,8 @@ export async function fetchData() {
   const data = await response.json();
   return data;
 }
+// export async function fetchData1() {
+//   const response = await fetch("https://disease.sh/v3/covid-19/countries");
+//   const data = await response.json();
+//   return data;
+// }
